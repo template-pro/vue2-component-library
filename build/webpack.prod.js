@@ -2,7 +2,6 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const NodeExternals = require('webpack-node-externals')
 
 const pkg = require('../package.json')
 const baseWebpackConfig = require('./webpack.base')
@@ -26,7 +25,6 @@ module.exports = merge(baseWebpackConfig, {
     libraryExport: 'default',
     libraryTarget: 'umd',
   },
-  externals: [NodeExternals()],
   optimization: {
     minimize: false, // 不压缩代码
   },
